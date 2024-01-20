@@ -1,3 +1,3 @@
 EXTRA_CFLAGS = -Wall -g
 
-obj-m        = helloworld.o
+obj-m        =lk1.o
