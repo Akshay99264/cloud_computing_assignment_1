@@ -1,3 +1,3 @@
 EXTRA_CFLAGS = -Wall -g
 
-obj-m        =lk2.o
+obj-m        =lkm2.o
