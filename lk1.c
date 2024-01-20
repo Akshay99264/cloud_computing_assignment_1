@@ -1,30 +1,30 @@
-#include <linux/module.h>   /* Needed by all modules */
-#include <linux/kernel.h>   /* Needed for KERN_INFO */
-#include <linux/sched/signal.h>
-#define KERN_INFO
+#include <linux/module.h> /* Needed by all modules */
+#include <linux/kernel.h>
+#include <linux/sched/signal.h> //Needed for for_each_process
 MODULE_LICENSE("GPL");
 
-struct cfs_rq {
-        struct load_weight load;
-        unsigned int nr_running, h_nr_running;
-};
-
-void printList(void){
-    struct task_struct * tsk;
-    for_each_process(tsk){
-        if(tsk->__state)
+void getPIDs(void)
+{
+    struct task_struct *task;
+    // for_each_process is a MACRO iterate over all the processes
+    for_each_process(task)
+    {
+        // Task_running: A process that is running or is ready to run in the ready queue run-queue and actually participates in process scheduling.
+        // task->__state will be 0 for the process in running or runnable state.
+        if (task->__state)
             continue;
-        printk("pid: %d\n", tsk->pid);
+        // print the PID of those process whose __state value is 0, means process is either running or in runnable state.
+        printk("pid: %d\n", task->pid);
     }
 }
 
-static int __init my_init(void)
+static int my_init(void)
 {
-   printList();
+    getPIDs();
     return 0;
 }
 
-static void __exit my_exit(void)
+static void my_exit(void)
 {
     return;
 }
