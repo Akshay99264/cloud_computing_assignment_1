@@ -6,16 +6,16 @@ MODULE_DESCRIPTION("My kernel module");
 MODULE_AUTHOR("Me");
 MODULE_LICENSE("GPL");
 
-static int dummy_init(void)
+static int hello_init(void)
 {
         printk("Hello World\n");
         return 0;
 }
 
-static void dummy_exit(void)
+static void bye_exit(void)
 {
         printk("Module Unloaded\n");
 }
 
-module_init(dummy_init);
-module_exit(dummy_exit);
+module_init(hello_init);
+module_exit(bye_exit);
