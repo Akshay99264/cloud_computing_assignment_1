@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/8547332/efficient-way-to-find-task-struct-by-pid : to find task by pid
+https://www.kernel.org/doc/gorman/html/understand/understand006.html : for page table walk
