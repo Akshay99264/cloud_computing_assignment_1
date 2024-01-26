@@ -1,2 +1,3 @@
 https://stackoverflow.com/questions/8547332/efficient-way-to-find-task-struct-by-pid : to find task by pid
 https://www.kernel.org/doc/gorman/html/understand/understand006.html : for page table walk
+https://yhbt.net/lore/all/20220215144241.3812052-48-Liam.Howlett@oracle.com/ : for VMA_ITERATOR

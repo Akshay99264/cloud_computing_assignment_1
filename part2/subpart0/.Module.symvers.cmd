@@ -1,0 +1,1 @@
+cmd_/home/cs695/cloud_computing_assignment_1/part2/subpart0/Module.symvers :=  sed 's/ko$$/o/'  /home/cs695/cloud_computing_assignment_1/part2/subpart0/modules.order | scripts/mod/modpost -m     -o /home/cs695/cloud_computing_assignment_1/part2/subpart0/Module.symvers -e -i Module.symvers -T - 
