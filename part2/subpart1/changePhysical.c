@@ -30,7 +30,7 @@ typedef struct
 typedef struct
 {
     unsigned long physical_address;
-    int value;
+    char value;
 } chang_para;
 
 static int my_open(struct inode *i, struct file *f)
@@ -127,7 +127,7 @@ static long my_ioctl(struct file *f, unsigned int cmd, unsigned long arg)
         {
             return -EFAULT;
         }
-        *(int *)phys_to_virt(temp.physical_address) = temp.value; // modify the value given physical address.
+        *(char *)phys_to_virt(temp.physical_address) = temp.value; // modify the value given physical address.
         printk("Modification Successfull\n");
         break;
     }
@@ -192,4 +192,4 @@ module_exit(query_ioctl_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Akshay Patidar");
-MODULE_DESCRIPTION("Driver to perform virtual to physical address and modify content given physical address");
+MODULE_DESCRIPTION("Driver to perform virtual to physical address and Modify content given physical address");
