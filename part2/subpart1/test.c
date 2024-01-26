@@ -41,12 +41,12 @@ int main()
     
     chang_para change_value;
     change_value.physical_address = temp.physical_address;
-    change_value.value = 25;
-
+    change_value.value = 255;
+    printf("Previous value: %d\n",n);
     if (ioctl(fd, QUERY_CHANGE_VALUE, &change_value) == -1) {
         printf("Error while making ioctl call\n");
         close(fd);
     }
-    printf("value: %d\n", n);
+    printf("Updated value: %d\n", n);
     return 0;
 }
