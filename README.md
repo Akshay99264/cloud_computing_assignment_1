@@ -1,6 +1,6 @@
 # Assignment 1
 
-This repository contains code for various assignments related to Linux Kernel Modules.
+This repository contains code assignment related to Linux Kernel Modules.
 
 ## 1. Folder `1`
 
